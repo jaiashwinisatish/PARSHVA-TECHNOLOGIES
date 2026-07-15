@@ -1,0 +1,290 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * PARSHVA TECHNOLOGIES — Luxury Dark Venture Studio Design System
+ * All colors use oklch. Semantic tokens only — never hardcode colors in JSX.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-2: var(--accent-2);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Satoshi", "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Clash Display", "Satoshi", ui-sans-serif, sans-serif;
+  --font-editorial: "Solitude", "Melodrama", serif;
+}
+
+:root {
+  --radius: 0.9rem;
+
+  --background: oklch(0.985 0.002 80);
+  --foreground: oklch(0.19 0 0);
+  --surface: oklch(0.99 0.001 80);
+  --surface-2: oklch(0.96 0.003 80);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0 0);
+
+  --primary: oklch(0.19 0 0);
+  --primary-foreground: oklch(0.985 0.002 80);
+  --secondary: oklch(0.935 0.003 80);
+  --secondary-foreground: oklch(0.19 0 0);
+
+  --muted: oklch(0.94 0.003 80);
+  --muted-foreground: oklch(0.48 0 0);
+
+  --accent: oklch(0.72 0.08 80);
+  --accent-foreground: oklch(0.19 0 0);
+  --accent-2: oklch(0.78 0.06 88);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.19 0 0 / 8%);
+  --input: oklch(0.19 0 0 / 5%);
+  --ring: oklch(0.72 0.08 80);
+
+  --gradient-accent: linear-gradient(135deg, oklch(0.72 0.08 80), oklch(0.78 0.06 88));
+  --gradient-text: linear-gradient(180deg, oklch(0.19 0 0) 0%, oklch(0.48 0 0) 100%);
+  --glow-accent: 0 0 60px -12px oklch(0.72 0.08 80 / 35%);
+  --shadow-float: 0 24px 60px -15px oklch(0.19 0 0 / 6%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    /* Subtle architectural grid pattern */
+    background-size: 80px 80px;
+    background-image:
+      linear-gradient(to right, oklch(0.19 0 0 / 1.2%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.19 0 0 / 1.2%) 1px, transparent 1px);
+  }
+
+  /* Custom scrollbar matching light editorial theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.19 0 0 / 15%);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.19 0 0 / 25%);
+  }
+
+  ::selection {
+    background: oklch(0.72 0.16 265 / 30%);
+    color: oklch(0.99 0 0);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-editorial);
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    line-height: 1.05;
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+@utility glass {
+  background: color-mix(in oklab, var(--surface) 55%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--border);
+}
+
+@utility glass-strong {
+  background: color-mix(in oklab, var(--surface-2) 70%, transparent);
+  backdrop-filter: blur(28px) saturate(150%);
+  border: 1px solid var(--border);
+}
+
+@utility text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-accent-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glow-ring {
+  box-shadow: var(--glow-accent);
+}
+
+@utility noise {
+  position: relative;
+}
+
+@utility grain-overlay {
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes aurora-move {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -6%, 0) scale(1.15);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-aurora {
+  animation: aurora-move 18s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* Premium section dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border) 15%,
+    var(--border) 85%,
+    transparent
+  );
+  opacity: 0.8;
+}
+
+/* Subtle link slide-underline micro-interaction */
+.nav-link-hover {
+  position: relative;
+}
+.nav-link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Custom premium hover shadow transition for bento boxes and comparative cards */
+.hover-card-premium {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 60px -15px oklch(0.19 0 0 / 8%),
+    0 0 0 1px oklch(0.72 0.08 80 / 12%);
+  border-color: oklch(0.72 0.08 80 / 30%);
+}
+
+/* Gold highlighted card effect */
+.card-highlight-gold {
+  border-color: oklch(0.72 0.08 80 / 40%) !important;
+  box-shadow:
+    0 30px 70px -15px oklch(0.19 0 0 / 10%),
+    0 0 20px 0 oklch(0.72 0.08 80 / 10%) !important;
+}
