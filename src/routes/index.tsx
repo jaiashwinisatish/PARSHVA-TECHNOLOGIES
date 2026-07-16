@@ -5,6 +5,7 @@ import { CursorGlow } from "@/components/parshva/CursorGlow";
 import { Navbar } from "@/components/parshva/Navbar";
 import { Hero } from "@/components/parshva/Hero";
 import { VentureStudio } from "@/components/parshva/VentureStudio";
+import { OurVentures } from "@/components/parshva/OurVentures";
 import { Story } from "@/components/parshva/Story";
 import { Services } from "@/components/parshva/Services";
 import { Industries } from "@/components/parshva/Industries";
@@ -29,6 +30,8 @@ function Index() {
         <Hero />
         <div className="section-divider" />
         <VentureStudio />
+        <div className="section-divider" />
+        <OurVentures />
         <div className="section-divider" />
         <Story />
         <div className="section-divider" />

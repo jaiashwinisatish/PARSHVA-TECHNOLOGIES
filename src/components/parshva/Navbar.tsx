@@ -7,6 +7,7 @@ import { useContactModal } from "@/context/ContactModalContext";
 const LINKS = [
   { label: "Home", href: "#home" },
   { label: "Venture Studio", href: "#venture-studio" },
+  { label: "Ventures", href: "#ventures" },
   { label: "Industries", href: "#industries" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
