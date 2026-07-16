@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Reveal, RevealGroup, revealItem } from "./Reveal";
 
@@ -73,16 +72,6 @@ export function VentureCard({ venture }: { venture: Venture }) {
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground/90 flex-1">
           {venture.description}
         </p>
-
-        {/* Bottom Arrow Icon & Footer */}
-        <div className="mt-6 flex items-center justify-between border-t border-border/10 pt-4">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/50 transition-colors duration-300 group-hover:text-accent">
-            Explore Venture
-          </span>
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-border/40 text-muted-foreground/80 transition-all duration-300 group-hover:border-accent/40 group-hover:bg-accent/5 group-hover:text-accent">
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
-          </div>
-        </div>
       </div>
     </motion.a>
   );
@@ -92,8 +81,8 @@ export function OurVentures() {
   return (
     <section id="ventures" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Header containing heading and top-right CTA */}
-        <div className="mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        {/* Header containing heading */}
+        <div className="mb-14">
           <Reveal className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.4em] text-accent">
               Our Ventures
@@ -103,16 +92,6 @@ export function OurVentures() {
               <br />
               built for the future.
             </h2>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <a
-              href="#ventures"
-              className="group nav-link-hover inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent/80 transition-colors hover:text-accent pb-1 cursor-pointer"
-            >
-              View All Ventures
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
-            </a>
           </Reveal>
         </div>
 
