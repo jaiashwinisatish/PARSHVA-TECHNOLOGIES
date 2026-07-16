@@ -12,7 +12,7 @@ export function Story() {
   return (
     <>
       {/* ABOUT — split layout */}
-      <section id="about" className="relative py-32 md:py-44 overflow-hidden bg-slate-950">
+      <section id="about" className="relative py-16 md:py-20 overflow-hidden bg-slate-950">
         {/* Background video */}
         <video
           autoPlay
@@ -47,7 +47,7 @@ export function Story() {
       </section>
 
       {/* WHY WE EXIST — timeline */}
-      <section className="relative py-32 md:py-44">
+      <section className="relative py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <Reveal className="mb-16 text-center">
             <span className="text-xs uppercase tracking-[0.4em] text-accent">Why We Exist</span>

@@ -68,7 +68,7 @@ function ParticleField() {
 export function FinalCTA() {
   const { openModal } = useContactModal();
   return (
-    <section id="contact" className="relative overflow-hidden py-32 md:py-44">
+    <section id="contact" className="relative overflow-hidden py-16 md:py-20">
       {/* Section Divider */}
       <div className="absolute top-0 left-0 w-full">
         <div className="section-divider" />

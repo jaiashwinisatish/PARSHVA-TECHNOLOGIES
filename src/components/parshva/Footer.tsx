@@ -74,15 +74,12 @@ export function Footer() {
         <div className="grid gap-12 grid-cols-1 md:grid-cols-[1.3fr_0.8fr_0.8fr_0.8fr_1.3fr] md:gap-0 md:divide-x md:divide-border/20">
           {/* Col 1: Brand Info */}
           <div className="md:pr-12">
-            <a href="#home" className="flex items-center gap-2.5">
-              <span
-                className="grid h-8 w-8 place-items-center rounded-lg text-primary-foreground"
-                style={{ background: "var(--gradient-accent)" }}
-              >
-                <span className="font-display text-lg font-bold">P</span>
+            <a href="/" className="flex flex-col items-start text-[#0D0D0D] hover:opacity-90 transition-opacity">
+              <span className="font-editorial text-[1.4rem] font-semibold uppercase leading-[0.95] tracking-[0.15em] mr-[-0.15em]">
+                PARSHVA
               </span>
-              <span className="text-sm font-medium tracking-[0.18em]">
-                PARSHVA <span className="text-muted-foreground">TECHNOLOGIES</span>
+              <span className="font-sans text-[0.48rem] font-bold uppercase leading-none tracking-[0.41em] mr-[-0.41em] mt-0.5 text-[#0D0D0D]/75">
+                TECHNOLOGIES
               </span>
             </a>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground text-balance">

@@ -3,7 +3,12 @@ import { useRef } from "react";
 import { MagneticButton } from "./MagneticButton";
 import { useContactModal } from "@/context/ContactModalContext";
 
-const words = ["Building", "Tomorrow's", "Companies,", "Today."];
+const words = [
+  { text: "Building", accent: false },
+  { text: "Tomorrow's", accent: false },
+  { text: "Companies", accent: true, suffix: "," },
+  { text: "Today.", accent: false },
+];
 
 export function Hero() {
   const { openModal } = useContactModal();
@@ -20,7 +25,7 @@ export function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 pb-16 lg:pb-0"
+      className="relative min-h-screen w-full overflow-hidden"
     >
       {/* Background soft glows */}
       <motion.div style={{ scale, opacity }} className="absolute inset-0 pointer-events-none">
@@ -37,10 +42,10 @@ export function Hero() {
       </motion.div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,var(--background)_90%)]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 w-full pt-4 lg:pt-12">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8 lg:items-center">
-          {/* Left Column: Content */}
-          <motion.div style={{ y }} className="lg:col-span-6 flex flex-col items-start text-left">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 min-h-screen w-full items-stretch">
+        {/* Left Column: Content */}
+        <div className="flex flex-col justify-center px-6 pt-32 pb-16 lg:pt-36 lg:pb-20 lg:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] lg:pr-16 w-full">
+          <motion.div style={{ y }} className="flex flex-col items-start text-left max-w-xl">
             <motion.span
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -51,11 +56,11 @@ export function Hero() {
               Global Venture Studio
             </motion.span>
 
-            <h1 className="font-editorial text-[clamp(2rem,5.5vw,4.5rem)] font-semibold leading-[0.98] text-balance text-left tracking-tight">
+            <h1 className="font-editorial text-[clamp(2rem,5.5vw,4.5rem)] font-semibold leading-[1.15] text-balance text-left tracking-tight pb-1">
               {words.map((w, i) => (
-                <span key={w} className="mr-[0.25em] inline-block overflow-hidden align-bottom pb-3 -mb-3">
+                <span key={w.text} className="mr-[0.25em] inline-block overflow-hidden align-bottom pb-4 -mb-4">
                   <motion.span
-                    className="inline-block text-gradient"
+                    className="inline-block pb-1"
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
                     transition={{
@@ -64,7 +69,12 @@ export function Hero() {
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
-                    {w}
+                    {w.accent ? (
+                      <span className="text-[#B89774]">{w.text}</span>
+                    ) : (
+                      <span className="text-gradient">{w.text}</span>
+                    )}
+                    {w.suffix && <span className="text-gradient">{w.suffix}</span>}
                   </motion.span>
                 </span>
               ))}
@@ -104,27 +114,25 @@ export function Hero() {
               </button>
             </motion.div>
           </motion.div>
-
-          {/* Right Side: Showcase Image */}
-          <motion.div
-            style={{ y }}
-            className="lg:col-span-6 w-full flex items-center justify-center relative"
-            initial={{ opacity: 0, scale: 0.97, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 2.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] overflow-hidden rounded-3xl border border-border/40 shadow-[0_20px_50px_oklch(0.19_0_0/6%)]">
-              {/* Subtle glass overlay highlight */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-transparent z-10 pointer-events-none" />
-              <img
-                src="/hero-workspace-new.png"
-                alt="Digital Innovation Desk"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-103"
-                loading="eager"
-              />
-            </div>
-          </motion.div>
         </div>
+
+        {/* Right Side: Showcase Image */}
+        <motion.div
+          style={{ y }}
+          className="relative w-full h-[400px] sm:h-[500px] lg:h-full overflow-hidden"
+          initial={{ opacity: 0, scale: 0.97, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ delay: 2.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Subtle glass overlay highlight */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-transparent z-10 pointer-events-none" />
+          <img
+            src="/hero-architecture.png"
+            alt="Minimalist abstract architectural curved panels with gold and grey metallic tones"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-103"
+            loading="eager"
+          />
+        </motion.div>
       </div>
     </section>
   );

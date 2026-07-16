@@ -22,7 +22,7 @@ const parshva = [
 
 export function WhyParshva() {
   return (
-    <section id="why-parshva" className="relative py-32 md:py-44">
+    <section id="why-parshva" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[0.4em] text-accent">Why Parshva</span>

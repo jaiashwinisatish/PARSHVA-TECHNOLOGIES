@@ -36,7 +36,7 @@ export function VentureStudio() {
   });
 
   return (
-    <section id="venture-studio" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
+    <section id="venture-studio" ref={ref} className="relative py-16 md:py-20 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left Column (Sticky info block) */}
@@ -47,8 +47,8 @@ export function VentureStudio() {
             </h2>
             <div className="my-8 h-0.5 w-12 bg-accent/40" />
             <p className="text-base leading-relaxed text-muted-foreground">
-              Unlike traditional software companies, we build complete businesses — from idea to
-              commercialization — ready for acquisition, licensing, or independent launch.
+              Unlike traditional software companies, we build complete businesses from idea to
+              commercialization ready for acquisition, licensing, or independent launch.
             </p>
           </div>
 

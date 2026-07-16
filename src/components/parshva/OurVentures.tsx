@@ -90,7 +90,7 @@ export function VentureCard({ venture }: { venture: Venture }) {
 
 export function OurVentures() {
   return (
-    <section id="ventures" className="relative py-32 md:py-44">
+    <section id="ventures" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         {/* Header containing heading and top-right CTA */}
         <div className="mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">

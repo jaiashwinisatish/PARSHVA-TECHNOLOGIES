@@ -22,7 +22,7 @@ const cards = [
 
 export function VisionMission() {
   return (
-    <section id="foundations" className="relative overflow-hidden py-32 md:py-44">
+    <section id="foundations" className="relative overflow-hidden py-16 md:py-20">
       {/* Background soft aurora glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div

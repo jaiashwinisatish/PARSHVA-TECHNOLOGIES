@@ -9,10 +9,6 @@ const LINKS = [
   { label: "Venture Studio", href: "#venture-studio" },
   { label: "Ventures", href: "#ventures" },
   { label: "Industries", href: "#industries" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Vision", href: "#vision" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -41,15 +37,12 @@ export function Navbar() {
             scrolled ? "glass-strong py-2.5 shadow-[var(--shadow-float)]" : "py-4",
           )}
         >
-          <a href="#home" className="flex items-center gap-2.5">
-            <span
-              className="grid h-8 w-8 place-items-center rounded-lg text-primary-foreground"
-              style={{ background: "var(--gradient-accent)" }}
-            >
-              <span className="font-display text-lg font-bold">P</span>
+          <a href="/" className="flex flex-col items-start text-[#0D0D0D] hover:opacity-90 transition-opacity">
+            <span className="font-editorial text-[1.4rem] font-semibold uppercase leading-[0.95] tracking-[0.15em] mr-[-0.15em]">
+              PARSHVA
             </span>
-            <span className="hidden text-sm font-medium tracking-[0.18em] sm:block">
-              PARSHVA <span className="text-muted-foreground">TECHNOLOGIES</span>
+            <span className="font-sans text-[0.48rem] font-bold uppercase leading-none tracking-[0.41em] mr-[-0.41em] mt-0.5 text-[#0D0D0D]/75">
+              TECHNOLOGIES
             </span>
           </a>
 

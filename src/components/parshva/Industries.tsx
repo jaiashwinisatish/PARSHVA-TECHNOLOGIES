@@ -38,7 +38,7 @@ const industries = [
 
 export function Industries() {
   return (
-    <section id="industries" className="relative py-32 md:py-44">
+    <section id="industries" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal className="mb-14 max-w-2xl">
           <span className="text-xs uppercase tracking-[0.4em] text-accent">Industries</span>
